@@ -88,11 +88,10 @@ body, html {
   color: white;
   display: grid;
   grid-template-areas: 
-      'header header header header header header'
       'main main main main main main'
       'footer footer footer footer footer footer';
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   padding: 20px;
   border: 4px solid black;

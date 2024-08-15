@@ -1,0 +1,16 @@
+.main {
+    /* align-self: self-start !important;
+    justify-self: self-start !important; */
+    text-align: start;
+    width: 32.1rem;
+}
+
+.what > p {
+    font-size: 12px;
+    margin: 0px;
+}
+
+.what > a {
+    text-decoration: underline; 
+    font-size: 20px;
+}
