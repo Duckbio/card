@@ -8,6 +8,7 @@ body {
 }
 .calendar {
   width: 350px;
+  height: 50svh;
   background-color: #A0B9D9;
   border: 4px solid black;
   box-shadow: 10px 10px #465173;
@@ -30,7 +31,7 @@ body {
 }
 .calendar-weekdays, .calendar-dates {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 2fr);
 }
 .calendar-weekdays div, .calendar-dates div {
   text-align: center;
@@ -39,21 +40,37 @@ body {
 .calendar-weekdays {
   background-color: #6F92BF;
 }
-.calendar-weekdays div {
+.calendar-weekdays div, button {
   font-weight: bold;
+}
+.calendar-dates p {
+  margin: 0;
+  padding: 0;
 }
 .calendar-dates div {
   border-bottom: 1px solid #6F92BF;
   cursor: pointer;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 .calendar-dates div:hover {
   background-color: #8C6E54;
 }
-.current-date {
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 50%;
+.useful-date {
+  display: inline-block; /* Ensures the circle only wraps around the content */
+  background-color: rgba(111, 146, 191, 0.8); /* Circle background color */
+  color: black; /* Text color */
+  text-align: center; /* Centers text inside the circle */
+  border-radius: 50%; /* Makes the background circular */
+  width: 55%;
+  height: 100%;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 @media (max-width: 400px) {
   .calendar {
     width: 100%;

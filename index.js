@@ -3,6 +3,9 @@ const monthYear = document.getElementById('month-year');
 const prevMonthBtn = document.getElementById('prev-month');
 const nextMonthBtn = document.getElementById('next-month');
 
+const datesWithJournalEntry = 
+["02012025", "04012025", "05012025", "07012025", "08012025", "09012025", "10012025", "11012025", "12012025", "13012025"]; // Change here
+
 let currentDate = new Date();
 let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
@@ -11,6 +14,23 @@ const months = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
+
+function formatDate(day, month, year) {
+  // Format day and month to 'DD' and 'MM' with leading zeros
+  const formattedDay = day.toString().padStart(2, '0');
+  const formattedMonth = month.toString().padStart(2, '0');
+  
+  // Combine into 'DDMMYYYY'
+  const dateToString = formattedDay + formattedMonth + year.toString();
+  return dateToString
+}
+
+function hasJournalEntry(day, month, year) { //could just have one input of the format string and call format string in renderCalendar
+  dateToString = formatDate(day, month, year)
+  if (datesWithJournalEntry.indexOf(dateToString) >= 0) {
+    return true
+  }
+}
 
 function renderCalendar(month, year) {
   calendarDates.innerHTML = '';
@@ -30,14 +50,21 @@ function renderCalendar(month, year) {
 
   // Populate the days
   for (let i = 1; i <= daysInMonth; i++) {
-    const day = document.createElement('div');
-    day.textContent = i;
-
+    const formattedDate = formatDate(i, month + 1, year)
+    var day
     // Highlight date
     if (
-        false == true
+      hasJournalEntry(i, month + 1, year)
     ) {
-      day.classList.add('current-date');
+      day = document.createElement('a');
+      day.href = "./journals/" + formattedDate + ".html";
+      const nestedDiv = day.appendChild(document.createElement('div'));
+      const nestedParagraph = nestedDiv.appendChild(document.createElement('p'));
+      nestedParagraph.innerHTML += i.toString();
+      nestedParagraph.classList.add('useful-date');
+    } else {
+      day = document.createElement('div');
+      day.textContent = i;
     }
 
     calendarDates.appendChild(day);
@@ -62,10 +89,4 @@ nextMonthBtn.addEventListener('click', () => {
     currentYear++;
   }
   renderCalendar(currentMonth, currentYear);
-});
-
-calendarDates.addEventListener('click', (e) => {
-  if (e.target.textContent !== '') {
-    alert(`You clicked on ${e.target.textContent} ${months[currentMonth]} ${currentYear}`);
-  }
 });
