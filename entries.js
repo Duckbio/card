@@ -1,7 +1,11 @@
 const prevEntryBtn = document.getElementById('prev-entry');
 const nextEntryBtn = document.getElementById('next-entry');
 
-const datesWithJournalEntry = ["02012025", "04012025", "05012025", "07012025", "08012025", "09012025", "10012025", "11012025", "12012025", "13012025"]; //Change here
+const datesWithJournalEntry = 
+[
+    "02012025", "04012025", "05012025", "07012025", "08012025", "09012025", "10012025", "11012025", "12012025", "13012025", "15012025", "16012025",
+    "19012025", "20012025",
+]; //Change here
 
 prevEntryBtn.addEventListener('click', () => {
     const dateOfEntry = prevEntryBtn.name;
