@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Welcome to the source code :D Enjoy my deranged, good-enough mentality 3am code <3 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>warmth</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../styling/global.css"> <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="../styling/warmth.css"> <!-- Link to external CSS file -->
+    </head>
+    <body>
+        <div class="centered-div" style="background-image: url(../background_warmth.png);">
+            <div class="main cormorant-garamond-light">
+                <h2>warmth</h2>
+                <div>
+                    <a href="warmth/titleWIP.html">Work in progress</a>
+                </div>
+                <div>
+                    <a href="warmth/blind.html">blind</a>
+                </div>
+                <div>
+                    <a href="warmth/acceptance.html">acceptance</a>
+                </div>
+                <div>
+                    <a href="warmth/peace.html">peace</a>
+                </div>
+                <div>
+                    <a href="warmth/dreams.html">dreams</a>
+                </div>
+                <div>
+                    <a href="warmth/teenageNightmare.html">teenage nightmare</a>
+                </div>
+                <div>
+                    <a href="warmth/sonnet.html">a sonnet to your pretty eyes</a>
+                </div>
+                <div>
+                    <a href="warmth/youAreAll.html">you are all</a>
+                </div>
+                <div>
+                    <a href="warmth/iMissYou.html">I miss you.</a>
+                </div>
+                <div>
+                    <a href="warmth/momentsByTheSea.html">moments spent by the sea</a>
+                </div>
+                <div>
+                    <a href="warmth/letter.html">letter to the past</a>
+                </div>
+                <div>
+                    <a href="warmth/currents.html">currents confuse me</a>
+                </div>
+                <div>
+                    <a href="warmth/revivalOfTheCherised.html">revival of the cherised</a>
+                </div>
+                <div>
+                    <a href="warmth/rapidsBlue.html">rapids blue, evelop me in your pretty hue</a>
+                </div>
+                <div>
+                    <a href="warmth/warmth.html">warmth.</a>
+                </div>
+            </div>
+            <div>
+                <footer>
+                    <p style="padding: 0;">warmth within, is this inner sanctum?</p>
+                </footer>
+            </div>
+            <div id="mobile-warning" style="display: none; color: black;">
+                <p>Hi! You seem to be on mobile. As a warning, the website looks much, much worse on mobile than PC; so I heavily recommend you go on a PC. But, it's still readable on mobile, so up to you.</p>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Define the breakpoint for mobile devicesl
+                const mobileBreakpoint = 768; // Width in pixes
+                const targetDivId = "mobile-warning"; // The ID of the div to show
+    
+                // Check if the device width is below the mobile breakpoint
+                if (window.innerWidth <= mobileBreakpoint) {
+                    // Select the footer and hide it
+                    const footer = document.querySelector("footer");
+                    if (footer) {
+                        footer.classList.add("hidden");
+                    }
+
+                    // Ensure the target div is visible (if necessary)
+                    const targetDiv = document.getElementById(targetDivId);
+                    targetDiv.style.display = "block"
+                }
+            });
+        </script>
+    </body>
+</html>
